@@ -8,7 +8,6 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            
             Color.black
                 .ignoresSafeArea()
             VStack {
@@ -16,9 +15,8 @@ struct ContentView: View {
                 Text("00:09.96")
                     .font(Font.system(size:90,weight: .thin))
                     .foregroundColor(.white)
-                
+                    Spacer()
                 HStack {
-                    
                     Circle_Button_View(
                         buttonColor: Color("Dark Grey"),
                         label: "Reset",
@@ -34,19 +32,56 @@ struct ContentView: View {
                     
                     
                 }
+                
+                
                 List{
                     Group{
-                        Text("1")
-                        Text("2")
-                        Text("3")
-                        Text("4")
-                        Text("5")
+                        HStack{
+                            Text("Lap 5")
+                                 Spacer()
+                                Text("00:00.98")
+                                .padding(.vertical, 15)
+                                 }
+                        HStack{
+                            Text("Lap 4")
+                                .foregroundColor(.red)
+                            Spacer()
+                            Text("00:04.08")
+                                .foregroundColor(.red)
+                                .padding(.vertical, 15)
+                        }
+                        HStack{
+                            Text("Lap 3")
+                                .foregroundColor(.green)
+                            Spacer()
+                            Text("00:00.96")
+                                .foregroundColor(.green)
+                                .padding(.vertical, 15)
+                        }
+                        HStack {
+                            Text("Lap 2")
+                            Spacer()
+                            Text("00:02.16")
+                            .padding(.vertical, 15)
+                                 }
+                            
+                        HStack {
+                            Text("Lap 1")
+                            Spacer()
+                            Text("00:01.16")
+                            .padding(.vertical, 15)
+                        }
+                                
+                
+                        
                     }
                     .listRowInsets(EdgeInsets(top: 0, leading: 0,bottom: 0,trailing: 0))
                 }
-                .frame(height:300)
+                .frame(height: 300)
                 .listStyle(.plain)
-                    
+                
+                
+                
                 
             }
             .padding()
@@ -56,7 +91,7 @@ struct ContentView: View {
 
 #Preview {
     TabView(selection: Binding.constant(3)){
-    
+        
         
         Text("World Clock")
             .tabItem {
